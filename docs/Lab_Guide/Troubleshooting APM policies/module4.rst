@@ -74,7 +74,7 @@ Server IP Address created in LAB I
 # Review the Manage Sessions screen, is there an Active Session? If not then why?
 
 
-Task 2: Jump Host
+Task 2: Message Box 
 ----------------------
 
 #  You can log BIG-IP APM session variables by configuring a message box action to display the sessionid variable.
@@ -105,8 +105,8 @@ For example:
 	Your session ID is %{session.user.sessionid}
 	Your user name is %{session.logon.last.username}
 	
-	
-	
+Task 2: APM Logging 
+----------------------
 	
 
 
