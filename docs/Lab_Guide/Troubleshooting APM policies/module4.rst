@@ -1,4 +1,4 @@
-Lab 4: Troubleshooting  **This Lab is optional depending on on time constraints**
+Lab 4: Troubleshooting
 ======================
 
 Welcome to the troubleshooting APM Policies lab.  This lab is optional.
@@ -12,7 +12,6 @@ in this lab:
 
 #  Message Boxes
 #  Logs
-#  Managing Sessions within the Access Policy Manager menu
 #  SAML Tracer
 #  Wireshark
 
@@ -20,7 +19,7 @@ in this lab:
 Task 1: Jump Host
 ----------------------
 
-#. Establish an RDP connection to your Jump Host (jumphost.f5lab.local) as well as login to the GUI
+#. Establish an RDP connection to your Jump Host as well as login to the GUI
 of the bigip1.f5lab.local BIG-IP system.
 
 Task 2: General Troubleshooting
@@ -109,26 +108,6 @@ For example:
 Task 2: APM Logging 
 ----------------------
 	
-#  APM Logs by default show the same information you can get from the Manage Sessions menu, as well as APM module-specific information.  Access Policy Manager uses syslog-ng to log events. The syslog-ng utility is an enhanced version of the standard logging utility syslog.
-
-The type of event messages available on the APM are:
-
-Event Messages			File Location				Description
-Access Policy Events		/var/log/access				Access Policy event messages relevant
-									to SSO, network access, and web applications
-
-Audit Logging			/var/log/audit				Audit event messages are messages that APM
-									logs as a result of configuration changes
-
-
-# For this Lab students will need to SSH into bigip1.f5lab.local and cd to the respective directory and use the tail command or editor to view logs.  When setting up logging you can customize the logs by designating the minimum severity level or log level, that you want the system to report when a type of event occurs. The minimum log level indicates the minimum severity level at which the system logs that type of event.
-
-# The default log level for the BIG-IP APM access policy log is Notice, which does *not* log Session Variables. Setting the access policy log level to Informational or Debug will cause the BIG-IP APM system to log Session Variables, but it will also add additional system overhead. If you need to log Session Variables on a production system, F5 recommends setting the access policy log level to Informational temporarily while performing troubleshooting or debugging.
-
-# In order to change the logging levels students will need to modify the default logging levels as noted below:
-
-
-
 
 
 
