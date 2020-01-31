@@ -1,4 +1,4 @@
-Lab 4: Troubleshooting
+Lab 4: Troubleshooting  **This Lab is optional depending on on time constraints**
 ======================
 
 Welcome to the troubleshooting APM Policies lab.  This lab is optional.
