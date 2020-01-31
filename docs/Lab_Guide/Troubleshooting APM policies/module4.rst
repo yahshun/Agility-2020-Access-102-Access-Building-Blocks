@@ -10,10 +10,10 @@ students after the class as a basis for troubleshooting APM within your
 own environment.  The following troubleshooting techniques will be covered
 in this lab:
 
-#  Message Boxes
-#  Logs
-#  SAML Tracer
-#  Wireshark
+#.  Message Boxes
+#.  Logs
+#.  SAML Tracer
+#.  Wireshark
 
 
 Task 1 - Jump Host
@@ -28,89 +28,90 @@ Task 2: General Troubleshooting
 In this lab exercise, you will learn where to look and what to look at when an Access Policy 
 is not successfully allowing access or not performing as intended.
 
-# Questions to ask yourself?
+#. Questions to ask yourself?
 
-# Do we have proper Network Connectivity?
+#. Do we have proper Network Connectivity?
 
-# Are there any Upstream/Downstream Firewall Rules preventing APM to be reachable or to reach destination
+#. Are there any Upstream/Downstream Firewall Rules preventing APM to be reachable or to reach destination
 targets it requires to access?
 
-# Do we have DNS setup properly?
+#. Do we have DNS setup properly?
 
-# Do we have NTP setup properly?
+#. Do we have NTP setup properly?
 
-# Are we receiving any Warnings or Error messages when we logon?
+#. Are we receiving any Warnings or Error messages when we logon?
 
-# Are there any missing dependencies?
+#. Are there any missing dependencies?
 
-# Time to check on our Sessions under Manage Session Menu
+#. Time to check on our Sessions under Manage Session Menu
 
 
 
-    # What can we see from the Manage Session Menu?
-    # If we click the Session ID link what more information is available?
-    # Is Authentication Successful or is it Failing?
-    # Is the user receiving the proper ENDING ALLOW from the Policy?
+    #. What can we see from the Manage Session Menu?
+    #. If we click the Session ID link what more information is available?
+    #. Is Authentication Successful or is it Failing?
+    #. Is the user receiving the proper ENDING ALLOW from the Policy?
 	
 # Time to Review the Reports information for the Session in question
 
-    # What information is available from the ALL SESSIONS REPORT?
-    # Can we review the Session Variables for the user’s session from the ALL SESSION REPORT? If YES then Why however If NO then WHY?
+    #. What information is available from the ALL SESSIONS REPORT?
+    #. Can we review the Session Variables for the user’s session from the ALL SESSION REPORT? If YES then Why however If NO then WHY?
 
 # Can the BIG-IP TMOS Resolve the AAA server by Hostname and by Hostname.Domain?
 
-    # Is the AAA reachable over the network, no Firewalls blocking communication from BIGIP Self-IP?
+    #. Is the AAA reachable over the network, no Firewalls blocking communication from BIGIP Self-IP?
 
-# Manage Sessions within the Access Policy Manager menu
+#. Manage Sessions within the Access Policy Manager menu
 
-# We use the Manage Sessions menu to view general status of currently logged in sessions,
+#. We use the Manage Sessions menu to view general status of currently logged in sessions,
 view their progress through a policy, and to kill sessions when needed.
 
-# Open a USER session to APM through a new browser window by navigating to your first Virtual
+#. Open a USER session to APM through a new browser window by navigating to your first Virtual
 Server IP Address created in LAB I 
 
-# Did you receive an error message? If so, take note of the Session Reference Number
+#. Did you receive an error message? If so, take note of the Session Reference Number
 
-# In the browser window, you are using to manage the BIG-IP, navigate to Access  Overview > Active Sessions menu.
+#. In the browser window, you are using to manage the BIG-IP, navigate to Access  Overview > Active Sessions menu.
 
-# Review the Manage Sessions screen, is there an Active Session? If not then why?
+#. Review the Manage Sessions screen, is there an Active Session? If not then why?
 
 
 Task 2 - Message Box 
 ----------------------
 
-#  You can log BIG-IP APM session variables by configuring a message box action to display the sessionid variable.
+#.  You can log BIG-IP APM session variables by configuring a message box action to display the sessionid variable.
 
-#  The sessionid is one of the session variables that can be displayed using a message box event.   To do so
+#.  The sessionid is one of the session variables that can be displayed using a message box event.   To do so
 perform the following procedure:
 
-#  Log into the BIG-IP Configuration utility
+#.  Log into the BIG-IP Configuration utility
 
-#  Navigate to Access Profiles
+#.  Navigate to Access Profiles
 
-#  Edit an Access Profiles
+#.  Edit an Access Profiles
 
-#  At the point in the Access Policy where you want to insert the message box, click the plus sign (+) to add
+#.  At the point in the Access Policy where you want to insert the message box, click the plus sign (+) to add
 an action.
 
-#  Select the Message Box action
+#.  Select the Message Box action
 
-#  Click Add Item
+#.  Click Add Item
 
-#  In the Name box type a name for the action.  For example:   Display session ID
+#.  In the Name box type a name for the action.  For example:   Display session ID
 
-#  In the Language menu, select language or leave it set to the default language
+#.  In the Language menu, select language or leave it set to the default language
 
-#  In the Message box, enter a message to display the session variables.
+#.  In the Message box, enter a message to display the session variables.
 For example:
 
 	Your session ID is %{session.user.sessionid}
 	Your user name is %{session.logon.last.username}
 	
+
 Task 2 - APM Logging 
 ----------------------
 	
-# Checking APM Logs
+#. Checking APM Logs
 
 APM Logs by default show the same information you can get from the Manage Sessions menu, as well as APM module-specific information.
 Access Policy Manager uses syslog-ng to log events. The syslog-ng utility is an enhanced version of the standard logging utility syslog.
@@ -135,6 +136,48 @@ The default log level for the BIG-IP APM access policy log is Notice, which does
 level to Informational or Debug will cause the BIG-IP APM system to log Session Variables, but it will also add additional system overhead.
 If you need to log Session Variables on a production system, F5 recommends setting the access policy log level to Informational temporarily
 while performing troubleshooting or debugging
+
+
+Task 3 - SAML Tracer
+----------------------
+
+Overview
+
+SAML Tracer is a browser plugin debugger for viewing SAML messages and can be leveraged
+for viewing SAML and WS-Federation messages sent through a browser durng Single Sign-On and logout.
+It is an essential tool for SAML debuging and is used extensively by SAML developers when analyzing
+Authentication Requests and Responses during a SAML login process.   SAML Tracer is a browser Add-On 
+and is supported on Google Chrome and Firefox.    For this lab the SAML Tracer has already been 
+enabled within Google Chrome and students will launch SAML Tracer while simultaneously logging into 
+the server3.acme.com SAML enabled application.    
+
+
+#.  Establish an RDP connection to your Jump Host
+
+#.  Lauch Google Chrome
+
+#.  On the top right menu bar click on the SAML Tracer object which will launch SAML Tracer
+
+#.  Within Chrome type in https://sp.acme.com
+
+#.  It may help to minize Chrome and move the SAML Tracer utility to the right side of Chrome
+	in order to view the SAML request/response actions
+	
+#.  Log in to https://sp.acme.com as as user1/user1 
+
+#.  Within the SAML Tracer utility you should see a number of GET and POST responses
+
+#.  Click on one of the GET requests within SAML Tracer and displayed below will be the
+	details of the request. In general GET calls will display the request an application 
+	is sending to the IdP.   A POST call is often useful to display details such as whether 
+	or not an X509 certificate is correct, but can be useful to display any number of variables
+	depending on whether the call is SP-Initiated or IdP-Initiated.
+	
+	
+
+	
+
+
 
 
 
