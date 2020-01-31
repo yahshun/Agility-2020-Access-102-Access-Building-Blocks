@@ -8,14 +8,12 @@ In the interest of focusing as much time as possible configuring and
 performing lab tasks, we have provided some resources and basic setup
 ahead of time. These are:
 
--  Cloud-based lab environment complete with Jump Host, Virtual BIG-IP
-   and Lab Server
+-  Cloud-based lab environment complete with a Windows Server 2016 Jump Host, two Virtual BIG-IP 
+   systems, a Windows Server 2016 Domain Controller, a Centos 7 server running NGINX, an Ubuntu
+   16.04 server running Radius, and a Windows Server 2016 Server running IIS.
 
--  Duplicate Lab environments for each student for improved
-   collaboration
-
--  The Virtual BIG-IP has been pre-licensed and provisioned with Access
-   Policy Manager (APM)
+-  Two Virtual BIG-IP systems have been have been pre-licensed and provisioned with Access
+   Policy Manager (APM); however, for this lab we will only be using big-ip1.f5lab.local.
 
 -  Pre-staged configurations to speed up lab time, reducing repetitive
    tasks to focus on key learning elements.
@@ -23,8 +21,6 @@ ahead of time. These are:
 If you wish to replicate these labs in your environment you will need to
 perform these steps accordingly. Additional lab resources are provided
 as illustrated in the diagram below:
-
-.. image:: /_static/class1/image2.png
 
 Timing for labs
 ~~~~~~~~~~~~~~~
@@ -38,13 +34,13 @@ take for each lab:
 +-----------------------------------------+----------------------+
 | **Lab Description**                     | **Time Allocated**   |
 +=========================================+======================+
-| LAB I (SAML Service Provider (SP))      | 25 minutes           |
+| LAB I Client-Side Authentication Lab    | 20 minutes           |
 +-----------------------------------------+----------------------+
-| LAB II (SAML Identity Provider (IDP))   | 25 minutes           |
+| LAB II SSO Lab Client to Server Side    | 15 minutes           |
 +-----------------------------------------+----------------------+
-| LAB III (Kerberos to SAML)              | 25 minutes           |
+| LAB III LTM+APM Per-Request Policy Lab  | 20 minutes           |
 +-----------------------------------------+----------------------+
-| LAB IV (SAAS Federation IAPP)           | 25 minutes           |
+| LAB IV Troubleshooting Lab (optional)   | TBD                  |
 +-----------------------------------------+----------------------+
 
 Authentication – Credentials
@@ -52,17 +48,30 @@ Authentication – Credentials
 
 The following credentials will be utilized throughout this Lab guide.
 
-+------------------------------------------+----------------+----------------+
-| **Credential Use**                       | **User ID**    | **Password**   |
-+==========================================+================+================+
-| BIG-IP Configuration Utility (GUI)       | admin          | admin          |
-+------------------------------------------+----------------+----------------+
-| BIG-IP CLI Access (SSH)                  | root           | default        |
-+------------------------------------------+----------------+----------------+
-| Jump Host Access                         | f5demo\\user   | Agility1       |
-+------------------------------------------+----------------+----------------+
-| All User authentication for Labs/Tasks   | user           | Agility1       |
-+------------------------------------------+----------------+----------------+
+Hostname	               Platform	                              Credentials	
+
+Big-ip1.f5lab.local	   BIG-IP TMOS 15.1	                     Admin/admin	
+
+Big-ip3.f5lab.local	   BIG-IP TMOS 15.1	                     Admin/admin	
+
+Jumphost.f5lab.local	   Windows Server 2016	                  f5lab\user1 user1	f5lab\user2 user2
+
+iis.f5lab.local	      Windows Server 2016 IIS Server	      Administrator\ PKmUPdwv	
+
+dc.f5lab.local	         Windows Server 2016 Domain Controller	Admin/admin	
+
+Radius.f5lab.local	   Ubuntu 16.04 LTS		
+
+web.f5lab.local	      Centos 7	                              Root\My$SQL	
+
+Network Topology		
+
+External	10.1.10.0/24		
+
+Internal	10.1.20.0/24		
+
+Management	10.1.1.0/24		
+
 
 Utilized Browsers
 ~~~~~~~~~~~~~~~~~
