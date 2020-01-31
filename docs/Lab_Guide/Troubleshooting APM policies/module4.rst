@@ -7,7 +7,13 @@ common Access Policy Manager (APM) issues as experienced by field engineers,
 support engineers, and customers.  This guide is intended to complement 
 lecture material provided during the course as well as reference guide for 
 students after the class as a basis for troubleshooting APM within your
-own environment.
+own environment.  The following troubleshooting techniques will be covered
+in this lab:
+
+#  Message Boxes
+#  Logs
+#  SAML Tracer
+#  Wireshark
 
 
 Task 1: Jump Host
@@ -66,6 +72,52 @@ Server IP Address created in LAB I
 # In the browser window, you are using to manage the BIG-IP, navigate to Access  Overview > Active Sessions menu.
 
 # Review the Manage Sessions screen, is there an Active Session? If not then why?
+
+
+Task 2: Jump Host
+----------------------
+
+#  You can log BIG-IP APM session variables by configuring a message box action to display the sessionid variable.
+
+#  The sessionid is one of the session variables that can be displayed using a message box event.   To do so
+perform the following procedure:
+
+#  Log into the BIG-IP Configuration utility
+
+#  Navigate to Access Profiles
+
+#  Edit an Access Profiles
+
+#  At the point in the Access Policy where you want to insert the message box, click the plus sign (+) to add
+an action.
+
+#  Select the Message Box action
+
+#  Click Add Item
+
+#  In the Name box type a name for the action.  For example:   Display session ID
+
+#  In the Language menu, select language or leave it set to the default language
+
+#  In the Message box, enter a message to display the session variables.
+For example:
+
+	Your session ID is %{session.user.sessionid}
+	Your user name is %{session.logon.last.username}
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
 
 
 
