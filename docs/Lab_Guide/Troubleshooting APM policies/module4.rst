@@ -16,7 +16,7 @@ in this lab:
 #  Wireshark
 
 
-Task 1: Jump Host
+Task 1 - Jump Host
 ----------------------
 
 #. Establish an RDP connection to your Jump Host as well as login to the GUI
@@ -76,7 +76,7 @@ Server IP Address created in LAB I
 # Review the Manage Sessions screen, is there an Active Session? If not then why?
 
 
-Task 2: Message Box 
+Task 2 - Message Box 
 ----------------------
 
 #  You can log BIG-IP APM session variables by configuring a message box action to display the sessionid variable.
@@ -107,7 +107,7 @@ For example:
 	Your session ID is %{session.user.sessionid}
 	Your user name is %{session.logon.last.username}
 	
-Task 2: APM Logging 
+Task 2 - APM Logging 
 ----------------------
 	
 # Checking APM Logs

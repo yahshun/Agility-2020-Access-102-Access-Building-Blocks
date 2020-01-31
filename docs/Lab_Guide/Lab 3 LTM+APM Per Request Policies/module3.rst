@@ -43,7 +43,7 @@ Lab Requirements:
 
 Estimated completion time: 20 minutes
 
-TASK 1 – 
+TASK 1 – Configure a new Per-Request Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Creating a per-request policy
 
