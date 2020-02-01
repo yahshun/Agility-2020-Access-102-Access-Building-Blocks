@@ -13,7 +13,7 @@ in this lab:
 #.  Message Boxes
 #.  Logs
 #.  SAML Tracer
-#.  Wireshark
+#.  F5 tcpdump and Wireshark
 
 
 Task 1 - Jump Host
@@ -173,11 +173,21 @@ the server3.acme.com SAML enabled application.
 	or not an X509 certificate is correct, but can be useful to display any number of variables
 	depending on whether the call is SP-Initiated or IdP-Initiated.
 	
+
+Task 4 - F5 tcpdump and Wireshark
+----------------------
+
+#.  This lab will cover the following topics:
+
+	#. tcpdump switches and filters
+	#. F5 specific tcpdump commands
+	#. F5 Wireshark plugin
+	#. Using the F5 Wireshark plugin
+	#. SSL decrypt packet capture
 	
+#.  Establish an RDP connection to your Jump Host
 
-	
-
-
+#	Establish an WebSSH 
 
 
 
