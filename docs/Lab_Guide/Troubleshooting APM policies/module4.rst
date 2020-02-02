@@ -183,8 +183,10 @@ Task 4 - F5 tcpdump and Wireshark
 	#. F5 specific tcpdump commands
 	#. F5 Wireshark plugin
 	#. Using the F5 Wireshark plugin
-	#. SSL decrypt packet capture
+	#. ssldump command 
 	
+	#. Using tcpdump switches and filters 
+
 #.  Establish an RDP connection to your Jump Host
 
 #.	The Jump Host has a shortcut link to Putty on the Desktop
@@ -204,7 +206,7 @@ Task 4 - F5 tcpdump and Wireshark
 		#. tcpdump -w   (using tcpdump -w will write packet captures to a file i.e. tcpdump -w /var/tmp/capture.pcap)
 		#. tcpdump -s   (using tcpdump -s0 will capture full data packets.  The number following 's'
 						indicates the number of bits to capture of each packet.  0 indicates all)
-#. Using the F5 Wireshark plugin
+	#. Using the F5 Wireshark plugin
 
 #. The F5 Wireshark plugin has already been installed and enabled within Wireshark on the Jumphost
 
@@ -232,7 +234,33 @@ Task 4 - F5 tcpdump and Wireshark
 
 #. Copy the pcap to the jumpbox Desktop
 
-#. 
+#. Now launch Wireshark, and click File, Open, and select the server3.acme.com.pcap file
+
+	#. ssldump command 
+
+#. The ssldump utility is an SSL/TLS network protocol analyzer, which identifies TCP connections from a chosen packet
+	trace or network interface and attempts to interpret them as SSL/TLS traffic. When the ssldump utility identifies
+	SSL/TLS traffic, it decodes the records and displays them in text to standard output. If provided with the private
+	key that was used to encrypt the connections, the ssldump utility may also be able to decrypt the connections
+	and display the application data traffic.
+	
+#. To begin this task let's use the /var/tmp/server3.acme.com.pcap capture
+
+#. SSL connections are established on top of existing TCP connections using an SSL handshake
+
+#. Launch a Putty session into big-ip1.f5lab or 10.1.1.4 and cd to /var/tmp
+
+#. Run the following command:  ssldump -nr server3.acme.com.pcap 
+
+#. The SSL/TLS records printed by the ssldump utility should display the TCP connection, as well as SSL records
+	sent between the client and the server.   The output of each SSL record begins with a record line.   It contains
+	the connection number with which the record is associated as well as the sequence number of the record followed
+	by two timestamps.   The first timestamp is the time in seconds since the start of the connection,  The seconds
+	timestamp is the time in seconds since the previous record on the same connection.  By default the ssldump
+	utility decodes and displays usefule details of some SSL record messages.
+	
+	
+#. This concludes Lab #4 basic troubleshooting steps and utilities.
 
 
 
