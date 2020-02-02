@@ -187,7 +187,58 @@ Task 4 - F5 tcpdump and Wireshark
 	
 #.  Establish an RDP connection to your Jump Host
 
-#	Establish an WebSSH 
+#.	The Jump Host has a shortcut link to Putty on the Desktop
+
+#.	Log into big-ip1.f5lab or the Management IP Address 10.1.1.4 as admin/admin
+
+#.	The tcpdump command has several switches with different purposes, and this exercise
+	will cover the most commonly used switches:
+	
+		#. tcpdump -D  (this will list the available interfaces for packet captures
+		
+		#. tcpdump -i  (to capture traffic on a specific interface use the following 
+						syntax:  tcpdump -i <interface name> i.e. tcpdump -i 0.0
+						another example is tcpdump -i external
+		#. tcpdump -nn  (this syntax will disable name resolution of hostnames and port names)
+		#. tcpdump -X   (using tcpdump -X will display output including ASCII and hex)
+		#. tcpdump -w   (using tcpdump -w will write packet captures to a file i.e. tcpdump -w /var/tmp/capture.pcap)
+		#. tcpdump -s   (using tcpdump -s0 will capture full data packets.  The number following 's'
+						indicates the number of bits to capture of each packet.  0 indicates all)
+#. Using the F5 Wireshark plugin
+
+#. The F5 Wireshark plugin has already been installed and enabled within Wireshark on the Jumphost
+
+#. Now let's use Wireshark along with the F5 plugin and take a packet capture from the BIG-IP
+
+#. Start Putty and log into big-ip1.f5lab or the Management IP Address 10.1.1.4 as admin/admin
+
+#. List the destination address of a virtual server on the F5 using the following command:
+
+#. tmsh list ltm virtual server3.acme.com destination
+
+#. Now take the destination address and compose a tcpdump as follows:
+
+#. tcpdump -nni 0.0:nnn -s0 -w /var/tmp/server3.acme.com host 10.1.10.103
+
+#. Now take the destination address and compose a tcpdump command and track traffic to server3.acme.com
+
+#. tcpdump -nni 0.0:nnn -s0 -w /var/tmp/server3.acme.com.pcap host 10.1.10.103
+
+#. After starting the capture start Chrome and type in https://server3.acme.com and login as user1/user1/u
+
+#. Stop the tcpdump by using Ctrl+c
+
+#. Now launch WinSCP and log into the big-ip1.f5lab or 10.1.1.4 and change the directory to /var/tmp
+
+#. Copy the pcap to the jumpbox Desktop
+
+#. 
+
+
+
+
+
+				
 
 
 
