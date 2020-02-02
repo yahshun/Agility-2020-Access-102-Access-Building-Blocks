@@ -45,7 +45,7 @@ targets it requires to access?
 
 #. Time to check on our Sessions under Manage Session Menu
 
-
+|image12|
 
     #. What can we see from the Manage Session Menu?
     #. If we click the Session ID link what more information is available?
