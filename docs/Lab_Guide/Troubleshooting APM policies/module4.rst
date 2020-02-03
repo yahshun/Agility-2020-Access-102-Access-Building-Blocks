@@ -54,21 +54,21 @@ Now it is time to check on our Sessions under Manage Session Menu
 	
 # Time to Review the Reports information for the Session in question
 
-    #. What information is available from the ALL SESSIONS REPORT?
-    #. Can we review the Session Variables for the user’s session from the ALL SESSION REPORT? If YES then Why however If NO then WHY?
+    - What information is available from the ALL SESSIONS REPORT?
+    - Can we review the Session Variables for the user’s session from the ALL SESSION REPORT? If YES then Why however If NO then WHY?
 
 |image13|
 
-# Can the BIG-IP TMOS Resolve the AAA server by Hostname and by Hostname.Domain?
+Can the BIG-IP TMOS Resolve the AAA server by Hostname and by Hostname.Domain?
 
-    #. Is the AAA reachable over the network, no Firewalls blocking communication from BIGIP Self-IP?
+    Is the AAA reachable over the network, no Firewalls blocking communication from BIGIP Self-IP?
 
-#. Manage Sessions within the Access Policy Manager menu
+Managing Sessions within the Access Policy Manager menu
 
-#. We use the Manage Sessions menu to view general status of currently logged in sessions,
+We use the Manage Sessions menu to view general status of currently logged in sessions,
 view their progress through a policy, and to kill sessions when needed.
 
-#. Open a USER session to APM through a new browser window by navigating to your first Virtual
+- Open a USER session to APM through a new browser window by navigating to your first Virtual
 Server IP Address created in LAB I 
 
 #. Did you receive an error message? If so, take note of the Session Reference Number
