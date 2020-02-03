@@ -68,14 +68,13 @@ Is the AAA server reachable over the network, no Firewalls blocking communicatio
 We use the Manage Sessions menu to view general status of currently logged in sessions,
 view their progress through a policy, and to kill sessions when needed.
 
-- Open a USER session to APM through a new browser window by navigating to your first Virtual
-Server IP Address created in LAB I 
+Open a USER session to APM through a new browser window by navigating to a Virtual Server such as http://server2.acme.com
 
-#. Did you receive an error message? If so, take note of the Session Reference Number
+- Did you receive an error message? If so, take note of the Session Reference Number
 
-#. In the browser window, you are using to manage the BIG-IP, navigate to Access  Overview > Active Sessions menu.
+- In the browser window, you are using to manage the BIG-IP, navigate to Access  Overview > Active Sessions menu.
 
-#. Review the Manage Sessions screen, is there an Active Session? If not then why?
+- Review the Manage Sessions screen, is there an Active Session? If not then why?
 
 
 Task 2 - Message Box 
@@ -109,18 +108,20 @@ For example:
 	Your session ID is %{session.user.sessionid}
 	Your user name is %{session.logon.last.username}
 	
+|image10|
 
 Task 2 - APM Logging 
 ----------------------
 	
-#. Checking APM Logs
+**Checking APM Logs**
 
 APM Logs by default show the same information you can get from the Manage Sessions menu, as well as APM module-specific information.
 Access Policy Manager uses syslog-ng to log events. The syslog-ng utility is an enhanced version of the standard logging utility syslog.
-The type of event messages available on the APM are:
+The type of event messages available on the APM are as follows:
 
 
 Event Messages					File location					Description
+
 Access Policy Events			/var/log/access					Access Policy event messages include logs pertinent to access policy
 																SSO, network access, and web applications.   To view access policy events
 																on the navigation pane, expand system menu and click logs.
