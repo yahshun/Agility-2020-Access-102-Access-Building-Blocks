@@ -166,13 +166,13 @@ Task 4 - F5 tcpdump and Wireshark
 
 #.  This lab will cover the following topics:
 
-	#. tcpdump switches and filters
-	#. F5 specific tcpdump commands
-	#. F5 Wireshark plugin
-	#. Using the F5 Wireshark plugin
-	#. ssldump command 
+	- tcpdump switches and filters
+	- F5 specific tcpdump commands
+	- F5 Wireshark plugin
+	- Using the F5 Wireshark plugin
+	- ssldump command 
 	
-	#. Using tcpdump switches and filters 
+**Using tcpdump switches and filters** 
 
 #.  Establish an RDP connection to your Jump Host
 
@@ -183,21 +183,22 @@ Task 4 - F5 tcpdump and Wireshark
 #.	The tcpdump command has several switches with different purposes, and this exercise
 	will cover the most commonly used switches:
 	
-		#. tcpdump -D  (this will list the available interfaces for packet captures
+		- tcpdump -D  (this will list the available interfaces for packet captures
 		
-		#. tcpdump -i  (to capture traffic on a specific interface use the following 
+		- tcpdump -i  (to capture traffic on a specific interface use the following 
 						syntax:  tcpdump -i <interface name> i.e. tcpdump -i 0.0
 						another example is tcpdump -i external
-		#. tcpdump -nn  (this syntax will disable name resolution of hostnames and port names)
-		#. tcpdump -X   (using tcpdump -X will display output including ASCII and hex)
-		#. tcpdump -w   (using tcpdump -w will write packet captures to a file i.e. tcpdump -w /var/tmp/capture.pcap)
-		#. tcpdump -s   (using tcpdump -s0 will capture full data packets.  The number following 's'
+		- tcpdump -nn  (this syntax will disable name resolution of hostnames and port names)
+		- tcpdump -X   (using tcpdump -X will display output including ASCII and hex)
+		- tcpdump -w   (using tcpdump -w will write packet captures to a file i.e. tcpdump -w /var/tmp/capture.pcap)
+		- tcpdump -s   (using tcpdump -s0 will capture full data packets.  The number following 's'
 						indicates the number of bits to capture of each packet.  0 indicates all)
-	#. Using the F5 Wireshark plugin
 
-#. The F5 Wireshark plugin has already been installed and enabled within Wireshark on the Jumphost
+**Using the F5 Wireshark plugin**
 
-#. Now let's use Wireshark along with the F5 plugin and take a packet capture from the BIG-IP
+_ The F5 Wireshark plugin has already been installed and enabled within Wireshark on the Jumphost
+
+- Now let's use Wireshark along with the F5 plugin and take a packet capture from the BIG-IP
 
 #. Start Putty and log into big-ip1.f5lab or the Management IP Address 10.1.1.4 as admin/admin
 
@@ -213,7 +214,7 @@ Task 4 - F5 tcpdump and Wireshark
 
 #. tcpdump -nni 0.0:nnn -s0 -w /var/tmp/server3.acme.com.pcap host 10.1.10.103
 
-#. After starting the capture start Chrome and type in https://server3.acme.com and login as user1/user1/u
+#. After starting the capture start Chrome and type in https://server3.acme.com and login as user1/user1
 
 #. Stop the tcpdump by using Ctrl+c
 
@@ -223,17 +224,17 @@ Task 4 - F5 tcpdump and Wireshark
 
 #. Now launch Wireshark, and click File, Open, and select the server3.acme.com.pcap file
 
-	#. ssldump command 
+**ssldump command** 
 
-#. The ssldump utility is an SSL/TLS network protocol analyzer, which identifies TCP connections from a chosen packet
-	trace or network interface and attempts to interpret them as SSL/TLS traffic. When the ssldump utility identifies
-	SSL/TLS traffic, it decodes the records and displays them in text to standard output. If provided with the private
-	key that was used to encrypt the connections, the ssldump utility may also be able to decrypt the connections
-	and display the application data traffic.
+The ssldump utility is an SSL/TLS network protocol analyzer, which identifies TCP connections from a chosen packet
+trace or network interface and attempts to interpret them as SSL/TLS traffic. When the ssldump utility identifies
+SSL/TLS traffic, it decodes the records and displays them in text to standard output. If provided with the private
+key that was used to encrypt the connections, the ssldump utility may also be able to decrypt the connections
+and display the application data traffic.
 	
-#. To begin this task let's use the /var/tmp/server3.acme.com.pcap capture
+- To begin this task let's use the /var/tmp/server3.acme.com.pcap capture
 
-#. SSL connections are established on top of existing TCP connections using an SSL handshake
+- SSL connections are established on top of existing TCP connections using an SSL handshake
 
 #. Launch a Putty session into big-ip1.f5lab or 10.1.1.4 and cd to /var/tmp
 
@@ -247,7 +248,7 @@ Task 4 - F5 tcpdump and Wireshark
 	utility decodes and displays usefule details of some SSL record messages.
 	
 	
-#. This concludes Lab #4 basic troubleshooting steps and utilities.
+**This concludes Lab #4 basic troubleshooting steps and utilities**
 
 
 
