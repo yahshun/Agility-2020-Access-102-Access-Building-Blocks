@@ -1,25 +1,12 @@
 Lab 1: Client-side Authentication lab
 =====================================
 
-.. toctree::
-   :maxdepth: 1
-   :glob:
 
-The purpose of this lab is to configure and test a SAML Service
-Provider. It is assumed students have a basic understanding of SAML
-(Security Assertion Markup Language) which defines an XML framework
-for creating, requesting, and exchanging authentication and authorization
-data among entites known as Identity Providers (IdPs) and Service Providers (SPs).
-The Lab environment will have a pre-configured IdP along with a Virtual Server
-and Access Policy.  Student tasks consist of configuring various aspects of a 
-SAML Service Provider, importing and binding to a SAML
-Identity Provider and testing SPInitiated SAML Federation.
+The purpose of this lab is to configure and test a SAML Service Provider. It is assumed students have a basic understanding of SAML
+(Security Assertion Markup Language) which defines an XML framework for creating, requesting, and exchanging authentication and authorization data among entites known as Identity Providers (IdPs) and Service Providers (SPs). The Lab environment will have a pre-configured IdP along with a Virtual Server and Access Policy.  Student tasks consist of configuring various aspects of a 
+SAML Service Provider (SP), importing and binding to a SAML Identity Provider (IdP) and testing SPI-initiated SAML Federation.
 
-When you use APM as a SAML service provider, APM consumes SAML assertions 
-(claims) and validates their trustworthiness.   After successfully verifying
-the assertion, APM creates session variables from the assertion contents.  An
-Access Policy can use session variables to finely control access to resources
-and to determine which ACLs to assign.  
+When APM serves as a SAML service provider, APM consumes SAML assertions (claims) and validates their trustworthiness.   After successfully verifying the assertion, APM creates session variables from the assertion contents.  An Access Policy can use session variables to finely control access to resources and to determine which ACLs to assign.  
 
 Objective:
 
@@ -61,7 +48,7 @@ SP Service
 
 #. Click **OK** on the dialogue box
 
-    .. NOTE:: The yellow box on Host will disappear when the Entity ID is entered.
+.. NOTE:: The yellow box on Host will disappear when the Entity ID is entered.
 
 IdP Connector
 -------------
@@ -138,42 +125,31 @@ TASK 2 ‑ Configure the SAML SP Access Policy
 #. Select *English* from the **Factory Built‑in Languages** on the right,
    and click the **Double Arrow (<<)**, then click the **Finished** button.
 
-  
-   |br|
-
-  
 #. From the **Access ‑> Profiles/Policies ‑> Access Profiles
    (Per‑Session Policies)** screen, click the **Edit** link on the previously
    created ``app.acme.com`` line
 
-
-
 #. In the Visual Policy Editor window for ``/Common/app.acme.com‑policy``,
    click the **Plus (+) Sign** between **Start** and **Deny**
-
   
 #. In the pop‑up dialog box, select the **Authentication** tab and then click
    the **Radio Button** next to **SAML Auth**
 
 #. Once selected, click the **Add Item** button
-
   
 #. In the **SAML Auth** configuration window, select ``/Common/app.f5demo.com``
    from the **AAA Server** drop down menu
 
 #. Click the **Save** button at the bottom of the window
 
- 
 #. In the **Visual Policy Editor** window for ``/Common/app.acme.com‑policy``,
    click the **Plus (+) Sign** on the **Successful** branch following
    **SAML Auth**
-
    
 #. In the pop-up dialog box, select the **Assignment** tab, and then click
    the **Radio Button** next to **Variable Assign**
 
 #. Once selected, click the **Add Item** buton
-
  
 #. In the **Variable Assign** configuration window, click the
    **Add New Entry** button
@@ -204,27 +180,22 @@ TASK 2 ‑ Configure the SAML SP Access Policy
 
 #. Click the **Save** button at the bottom of the **Variable Assign**
    dialog window
-
   
 #. In the **Visual Policy Editor** select the **Deny** ending along the
    **fallback** branch following the **Variable Assign**
-
    
 #. From the **Select Ending** dialog box, select the **Allow** button and
    then click **Save**
-
  
 #. In the **Visual Policy Editor** click **Apply Access Policy** (top left)
    and close the **Visual Policy Editor**
 
- 
 TASK 3 ‑ Create the SP Virtual Server & Apply the SP Access Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Begin by selecting **Local Traffic -> Virtual Servers**
 
 #. Click the **Create** button (far right)
-
   
 #. In the **New Virtual Server** window, key in the following as shown:
 
@@ -260,7 +231,6 @@ TASK 3 ‑ Create the SP Virtual Server & Apply the SP Access Policy
 
 #. Scroll to the bottom of the configuration window and click **Finished**
 
-
    .. NOTE:: The iRule is being added in order to simulate an application
       server to validate successful access.
 
@@ -269,7 +239,6 @@ TASK 4 ‑ Test the SAML SP
 
 #. Using your browser from the jump host, navigate to the SAML SP you just
    configured at ``https://app.f5demo.com`` (or click the provided bookmark)
-
    
 #. Did you successfuly redirect to the IdP?
 
@@ -286,6 +255,3 @@ TASK 4 ‑ Test the SAML SP
 
 #. Review your Access Report Logs **(Access ‑> Overview ‑> Access Reports)**
 
-.. |br| raw:: html
-
-   <br />
