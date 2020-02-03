@@ -61,9 +61,9 @@ Now it is time to check on our Sessions under Manage Session Menu
 
 Can the BIG-IP TMOS Resolve the AAA server by Hostname and by Hostname.Domain?
 
-    Is the AAA reachable over the network, no Firewalls blocking communication from BIGIP Self-IP?
+Is the AAA server reachable over the network, no Firewalls blocking communication from BIGIP Self-IP?
 
-Managing Sessions within the Access Policy Manager menu
+**Managing Sessions within the Access Policy Manager menu**
 
 We use the Manage Sessions menu to view general status of currently logged in sessions,
 view their progress through a policy, and to kill sessions when needed.
