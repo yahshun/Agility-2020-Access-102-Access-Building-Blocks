@@ -129,6 +129,7 @@ Access Policy Events			/var/log/access					Access Policy event messages include 
 Audit Logging				/var/log/audit					Audit event messages are log messages that APM                                                                                           logs as a result of configuration changes.
 
 When setting up logging you can customize the logs by designating the desired minimum severity level or log level that you want the system to report when a type of event occurs. The minimum log level indicates the minimum severity level at which the system logs that type of event.
+
 Note:  Files are rotated daily if their file size exceeds 10MB.  Additionally, weekly rotations are enforced if the rotated log file is a week old, regardless whether or not the file exceeds the 10MB threshold.  The default log level for the BIG-IP APM access policy log is Notice, which does *not* log Session Variables. Setting the access policy log level to Informational or Debug will cause the BIG-IP APM system to log Session Variables, but it will also add additional system overhead.
 
 If you need to log Session Variables on a production system, F5 recommends setting the access policy log level to Debug temporarily
