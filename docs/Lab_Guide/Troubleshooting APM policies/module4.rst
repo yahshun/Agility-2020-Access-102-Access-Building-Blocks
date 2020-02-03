@@ -120,26 +120,19 @@ Access Policy Manager uses syslog-ng to log events. The syslog-ng utility is an 
 The type of event messages available on the APM are as follows:
 
 
-Event Messages					File location					Description
+Event Messages				File location					Description
 
-Access Policy Events			/var/log/access					Access Policy event messages include logs pertinent to access policy
-																SSO, network access, and web applications.   To view access policy events
-																on the navigation pane, expand system menu and click logs.
+Access Policy Events			/var/log/access					Access Policy event messages include logs
+                                                                                        Pertinent to access policy SSO, network access,                                                                                         and web applications.  To view access policy                                                                                             events on the navigation pane, expand system                                                                                             menu and click logs.
 																
 																
-Audit Logging					/var/log/audit					Audit event messages are log messages that APM logs as a result of configuration changes.
+Audit Logging				/var/log/audit					Audit event messages are log messages that APM                                                                                           logs as a result of configuration changes.
 
+When setting up logging you can customize the logs by designating the desired minimum severity level or log level that you want the system to report when a type of event occurs. The minimum log level indicates the minimum severity level at which the system logs that type of event.
+Note:  Files are rotated daily if their file size exceeds 10MB.  Additionally, weekly rotations are enforced if the rotated log file is a week old, regardless whether or not the file exceeds the 10MB threshold.  The default log level for the BIG-IP APM access policy log is Notice, which does *not* log Session Variables. Setting the access policy log level to Informational or Debug will cause the BIG-IP APM system to log Session Variables, but it will also add additional system overhead.
 
-
-When setting up logging you can customize the logs by designating the minimum severity level or log level,
-that you want the system to report when a type of event occurs. The minimum log level indicates the minimum
-severity level at which the system logs that type of event.  Note:  Files are rotated daily if their file size exceeds 10MB.
-Additionally, weekly rotations are enforced if the rotated log file is a week old, regardless whether or not the file exceeds the 10MB threshold.
-The default log level for the BIG-IP APM access policy log is Notice, which does *not* log Session Vari- ables. Setting the access policy log
-level to Informational or Debug will cause the BIG-IP APM system to log Session Variables, but it will also add additional system overhead.
-If you need to log Session Variables on a production system, F5 recommends setting the access policy log level to Informational temporarily
-while performing troubleshooting or debugging
-
+If you need to log Session Variables on a production system, F5 recommends setting the access policy log level to Debug temporarily
+while performing troubleshooting or debugging access related issues.
 
 Task 3 - SAML Tracer
 ----------------------
@@ -176,7 +169,6 @@ the server3.acme.com SAML enabled application.
 	or not an X509 certificate is correct, but can be useful to display any number of variables
 	depending on whether the call is SP-Initiated or IdP-Initiated.
 	
-
 Task 4 - F5 tcpdump and Wireshark
 ----------------------
 
