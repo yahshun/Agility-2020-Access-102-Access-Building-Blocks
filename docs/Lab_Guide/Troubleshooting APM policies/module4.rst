@@ -61,7 +61,7 @@ Now it is time to check on our Sessions under Manage Session Menu
 
 Can the BIG-IP TMOS Resolve the AAA server by Hostname and by Hostname.Domain?
 
-Is the AAA server reachable over the network, no Firewalls blocking communication from BIGIP Self-IP?
+Is the AAA server reachable over the network? Ensure no Firewalls are blocking network ports/protocols.
 
 **Managing Sessions within the Access Policy Manager menu**
 
