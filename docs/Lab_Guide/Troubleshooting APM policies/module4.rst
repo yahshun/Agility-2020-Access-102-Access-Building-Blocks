@@ -117,16 +117,7 @@ Task 2 - APM Logging
 
 APM Logs by default show the same information you can get from the Manage Sessions menu, as well as APM module-specific information.
 Access Policy Manager uses syslog-ng to log events. The syslog-ng utility is an enhanced version of the standard logging utility syslog.
-The type of event messages available on the APM are as follows:
-
-
-Event Messages				File location					Description
-
-Access Policy Events			/var/log/access					Access Policy event messages include logs
-                                                                                        Pertinent to access policy SSO, network access,                                                                                         and web applications.  To view access policy                                                                                             events on the navigation pane, expand system                                                                                             menu and click logs.
-																
-																
-Audit Logging				/var/log/audit					Audit event messages are log messages that APM                                                                                           logs as a result of configuration changes.
+APM log messages are stored in the following file locations:  /var/log/access, /var/log/audit
 
 When setting up logging you can customize the logs by designating the desired minimum severity level or log level that you want the system to report when a type of event occurs. The minimum log level indicates the minimum severity level at which the system logs that type of event.
 
