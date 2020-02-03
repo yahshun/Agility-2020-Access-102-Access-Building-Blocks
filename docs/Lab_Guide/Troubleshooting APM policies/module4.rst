@@ -57,6 +57,8 @@ targets it requires to access?
     #. What information is available from the ALL SESSIONS REPORT?
     #. Can we review the Session Variables for the user’s session from the ALL SESSION REPORT? If YES then Why however If NO then WHY?
 
+|image13|
+
 # Can the BIG-IP TMOS Resolve the AAA server by Hostname and by Hostname.Domain?
 
     #. Is the AAA reachable over the network, no Firewalls blocking communication from BIGIP Self-IP?
