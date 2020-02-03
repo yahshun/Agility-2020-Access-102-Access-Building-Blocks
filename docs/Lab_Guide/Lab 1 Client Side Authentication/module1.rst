@@ -3,10 +3,12 @@ Lab 1: Client-side Authentication lab
 
 
 The purpose of this lab is to configure and test a SAML Service Provider. It is assumed students have a basic understanding of SAML
-(Security Assertion Markup Language) which defines an XML framework for creating, requesting, and exchanging authentication and authorization data among entites known as Identity Providers (IdPs) and Service Providers (SPs). The Lab environment will have a pre-configured IdP along with a Virtual Server and Access Policy.  Student tasks consist of configuring various aspects of a 
-SAML Service Provider (SP), importing and binding to a SAML Identity Provider (IdP) and testing SPI-initiated SAML Federation.
-
-When APM serves as a SAML service provider, APM consumes SAML assertions (claims) and validates their trustworthiness.   After successfully verifying the assertion, APM creates session variables from the assertion contents.  An Access Policy can use session variables to finely control access to resources and to determine which ACLs to assign.  
+(Security Assertion Markup Language) which defines an XML framework for creating, requesting, and exchanging authentication and authorization
+data among entites known as Identity Providers (IdPs) and Service Providers (SPs). The Lab environment will have a pre-configured IdP along with
+a Virtual Server and Access Policy.  Student tasks consist of configuring various aspects of a SAML Service Provider (SP), importing and binding
+to a SAML Identity Provider (IdP) and testing SPI-initiated SAML Federation.  When APM serves as a SAML service provider, APM consumes SAML assertions
+(claims) and validates their trustworthiness.   After successfully verifying the assertion, APM creates session variables from the assertion contents.
+An Access Policy can use session variables to finely control access to resources and to determine which ACLs to assign.  
 
 Objective:
 
@@ -23,89 +25,69 @@ Lab Requirements:
 
 Estimated completion time: 20 minutes
 
-TASK 1 ‑ Configure the SAML Service Provider (SP)
+TASK 1	Configure the SAML Service Provider (SP)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Note - within an SP-Initiated flow the SP sends an authn req to the IdP**
 
-SP Service
+Configure an external SP Service Provider
 ----------
 #. Begin by logging into the big-ip1.f5lab.local via the GUI (TMUI)
-#. Begin by selecting: **Access -> Federation -> SAML Service Provider -> Local SP Services**
-#. Click the **Create** button (far right)
 
+#. Within the GUI, click on **Access -> Federation -> SAML Service Provider -> External SP Services**
+
+#. Click the **Create** button (far right)
 
 #. In the **Create New SAML SP Service** dialog box click **General Settings**
    in the left navigation pane and key in the following as shown:
 
    +------------+----------------------------+
-   | Name:      | ``server2.acme.com``         |
+   | Name:      | ``sp.acme.com``         |
    +------------+----------------------------+
-   | Entity ID: | ``https://server2.acme.com`` |
+   | Entity ID: | ``https://sp.acme.com`` |
    +------------+----------------------------+
    
+|image1|
+
+|image2|
+
+|image3|
+
+ 
 **Note - Service Provider hostnames much be resolvable by the BIG-IP and User-Agent**
 
 #. Click **OK** on the dialogue box
 
-.. NOTE:: The yellow box on Host will disappear when the Entity ID is entered.
+**The yellow box on Host will disappear when the Entity ID is entered**
 
-IdP Connector
--------------
+#. Bind the external SP Service Provider (sp.acme.com) to the IdP connector prebuilt-idp.acme.com
 
-#. Click on **Access > Federation > SAML Service Provider > External IdP
-   Connectors** *or* click on the **SAML Service Provider** tab in the
-   horizontal navigation menu and select **External IdP Connectors**
+#. Click on **Access > Federation > SAML Identity Provider > Local IdP
+   Connectors**
 
-#. Click specifically on the **Down Arrow** next to the **Create** button
-   (far right)
+#. Check the box to the left of pre-built-idp.acme.com 
 
-#. Select **From Metadata** from the drop down menu
+#. At the bottom of the page there is a Bind/Unbind SP Connectors link
 
- #. In the **Create New SAML IdP Connector** dialogue box, click **Browse**
-   and select the **idp.partner.com‑app_metadata.xml** file from the Desktop
-   of your jump host.
+|image5|
 
-#. In the **Identity Provider Name** field enter *idp.partner.com*:
+
+#. Click on the Bind/Unbind SP Connectors link
+
+#. Select the /Common/sp.acme.com SP Connector
 
 #. Click **OK** on the dialog box
-
-   .. NOTE:: The idp.partner.com-app_metadata.xml was created previously.
-      Oftentimes, IdP providers will have a metadata file representing their IdP
-      service.  This can be imported to save object creation time as it has been
-      done in this lab
 
 #. Click on the **Local SP Services** from the **SAML Service Providers** tab
    in the horizontal navigation menu
 
-#. Click the **checkbox** next to the previously created *app.f5demo.com* and
-   click **Bind/Unbind IdP Connectors** at the bottom of the GUI
+#. Click OK
 
-  #. In the **Edit SAML IdP's that use this SP** dialogue box, click the
-    **Add New Row** button
-#. In the added row, click the **Down Arrow** under **SAML IdP Connectors** and
-   select the */Common/idp.partner/com* SAML IdP Connector previously created
-
-#. Click the **Update** button and the **OK** button at the bottom of the
-   dialog box
-
-  
-#. Under the **Access ‑> Federation ‑> SAML Service Provider ‑>
-   Local SP Services** menu you should now see the following (as shown):
-
-   +----------------------+---------------------+
-   | Name:                | ``app.acme.com``  |
-   +----------------------+---------------------+
-   | SAML IdP Connectors: | ``app.acme.com`` |
-   +----------------------+---------------------+
-
-   |image7|
-
-TASK 2 ‑ Configure the SAML SP Access Policy
+**TASK 2  Configure the SAML SP Access Policy**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Begin by selecting **Access ‑> Profiles/Policies ‑>
-   Access Profiles (Per‑Session Policies)**
+#. Begin by selecting **Access > Profiles/Policies >
+   Access Profiles (Per Session Policies)**
 
 #. Click the **Create** button (far right)
 
@@ -113,7 +95,7 @@ TASK 2 ‑ Configure the SAML SP Access Policy
 #. In the **New Profile** window, key in the following:
 
    +----------------+---------------------------+
-   | Name:          | ``app.acme.com`` |
+   | Name:          | ``sp.acme.com`` |
    +----------------+---------------------------+
    | Profile Type:  | ``All`` (from drop down)  |
    +----------------+---------------------------+
@@ -122,17 +104,24 @@ TASK 2 ‑ Configure the SAML SP Access Policy
 
 #. Scroll to the bottom of the **New Profile** window to the
    **Language Settings**
-#. Select *English* from the **Factory Built‑in Languages** on the right,
+   
+#. Select *English* from the **Factory Built in Languages** on the right,
    and click the **Double Arrow (<<)**, then click the **Finished** button.
 
-#. From the **Access ‑> Profiles/Policies ‑> Access Profiles
-   (Per‑Session Policies)** screen, click the **Edit** link on the previously
+#. From the **Access > Profiles/Policies > Access Profiles
+   (Per Session Policies)** screen, click the **Edit** link on the previously
    created ``app.acme.com`` line
 
-#. In the Visual Policy Editor window for ``/Common/app.acme.com‑policy``,
+#. In the Visual Policy Editor window for ``/Common/sp.acme.com policy``,
    click the **Plus (+) Sign** between **Start** and **Deny**
-  
-#. In the pop‑up dialog box, select the **Authentication** tab and then click
+   
+#. Click on the Logon tab, and check the Logon Page radio button then click
+	Add Item
+	
+#.  With the Logon Page Agent enter "Hello" within the Form Header Text field
+	then click Save
+	
+#. In the pop up dialog box, select the **Authentication** tab and then click
    the **Radio Button** next to **SAML Auth**
 
 #. Once selected, click the **Add Item** button
