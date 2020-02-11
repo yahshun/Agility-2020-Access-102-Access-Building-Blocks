@@ -1,10 +1,6 @@
 Lab 2: SSO Lab
 ===========================
 
-.. toctree::
-   :maxdepth: 1
-   :glob:
-
 The purpose of this lab is to demonstrate Single Sign-On capabilities
 of APM.    The SSO Credential Mapping action enables users to forward
 stored user names and passwords to applications and servers automatically,
