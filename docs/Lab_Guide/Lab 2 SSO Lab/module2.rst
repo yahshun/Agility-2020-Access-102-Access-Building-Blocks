@@ -17,10 +17,10 @@ methods exist.  This lab will demonstrate the Kerberos to SAML method.
 
 Objective:
 
--  Gain an understanding SSO Token User Name Caching and SSO Token Password
+-  Gain an understanding of SSO Token User Name Caching and SSO Token Password
    Caching.
 
--  Gain an understanding of the Kerberos to SAML relationship its
+-  Gain an understanding of the Kerberos to SAML relationship and its
    component parts.
 
 -  Develop an awareness of the different deployment models that Kerberos
@@ -32,18 +32,18 @@ Lab Requirements:
 
 Estimated completion time: 15 minutes
 
-TASK 1 – Create SAML Resource, Webtop, and SAML IdP
-Access Policy
+**TASK 1 – Create SAML Resource, Webtop, and SAML IdP
+Access Policy**
 
 ______________________________________________________________
 
 SAML Resource
 
-#  Being by selecting Access > Federation > SAML Resources
+#.  Being by selecting Access > Federation > SAML Resources
 
-#  Click the Create button (far right)
+#.  Click the Create button (far right)
 
-#  In the New SAML Resource window, enter the following values:
+#.  In the New SAML Resource window, enter the following values:
 
 	Name			 	partner-app
 	
@@ -55,11 +55,11 @@ Click Finished at the bottom of the configuration window
 
 Webtop
 
-#	Select Access > Webtops > Webtop List
+#.	Select Access > Webtops > Webtop List
 
-#	Click Create button (far right)
+#.	Click Create button (far right)
 
-#	In the resulting window, enter the following values
+#.	In the resulting window, enter the following values
 
 	Name	full_webtop
 	Type	Full (drop down)
