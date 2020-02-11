@@ -32,7 +32,7 @@ Lab Requirements:
 
 Estimated completion time: 15 minutes
 
-##**TASK 1 – Create SAML Resource, Webtop, and SAML IdP
+## **TASK 1 – Create SAML Resource, Webtop, and SAML IdP
 Access Policy**
 
 ______________________________________________________________
@@ -67,7 +67,7 @@ Webtop
 Click finished at the bottom of the GUI
 
 
-##TASK 2 – Modify the SAML Identity Provider (IdP) Access Policy
+## TASK 2 – Modify the SAML Identity Provider (IdP) Access Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Using the existing Access Policy (pre-built-idp.acme.com) and navigate to **Access ‑>
@@ -237,7 +237,7 @@ Click finished at the bottom of the GUI
 
    |image93|
 
-TASK 3 - Test the Kerberos to SAML Configuration
+## TASK 3 - Test the Kerberos to SAML Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. NOTE:: In the following Lab Task it is recommended that you use Microsoft
