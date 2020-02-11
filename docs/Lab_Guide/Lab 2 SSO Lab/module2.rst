@@ -32,7 +32,7 @@ Lab Requirements:
 
 Estimated completion time: 15 minutes
 
-**TASK 1 – Create SAML Resource, Webtop, and SAML IdP
+##**TASK 1 – Create SAML Resource, Webtop, and SAML IdP
 Access Policy**
 
 ______________________________________________________________
@@ -67,7 +67,7 @@ Webtop
 Click finished at the bottom of the GUI
 
 
-TASK 2 – Modify the SAML Identity Provider (IdP) Access Policy
+##TASK 2 – Modify the SAML Identity Provider (IdP) Access Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Using the existing Access Policy (pre-built-idp.acme.com) and navigate to **Access ‑>
@@ -237,7 +237,7 @@ TASK 2 – Modify the SAML Identity Provider (IdP) Access Policy
 
    |image93|
 
-TASK 2 - Test the Kerberos to SAML Configuration
+TASK 3 - Test the Kerberos to SAML Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. NOTE:: In the following Lab Task it is recommended that you use Microsoft
@@ -261,32 +261,5 @@ TASK 2 - Test the Kerberos to SAML Configuration
 
 #. Review your Access Report Logs **(Access ‑> Overview ‑> Access Reports)**
 
-.. |br| raw:: html
 
-   <br />
 
-.. |image70| image:: /_static/class1/image44.png
-.. |image71| image:: /_static/class1/image70.png
-.. |image72| image:: /_static/class1/image71.png
-.. |image73| image:: /_static/class1/image72.png
-.. |image74| image:: /_static/class1/image73.png
-.. |image75| image:: /_static/class1/image74.png
-.. |image76| image:: /_static/class1/image75.png
-.. |image77| image:: /_static/class1/image76.png
-.. |image78| image:: /_static/class1/image77.png
-.. |image79| image:: /_static/class1/image78.png
-.. |image80| image:: /_static/class1/image79.png
-.. |image81| image:: /_static/class1/image53.png
-.. |image82| image:: /_static/class1/image54.png
-.. |image83| image:: /_static/class1/image80.png
-.. |image84| image:: /_static/class1/image56.png
-.. |image85| image:: /_static/class1/image81.png
-.. |image86| image:: /_static/class1/image58.png
-.. |image87| image:: /_static/class1/image60.png
-.. |image88| image:: /_static/class1/image61.png
-.. |image89| image:: /_static/class1/image62.png
-.. |image90| image:: /_static/class1/image63.png
-.. |image91| image:: /_static/class1/image82.png
-.. |image92| image:: /_static/class1/image65.png
-.. |image93| image:: /_static/class1/image83.png
-.. |image94| image:: /_static/class1/image84.png
