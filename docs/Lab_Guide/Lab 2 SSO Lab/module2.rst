@@ -32,7 +32,7 @@ Lab Requirements:
 
 Estimated completion time: 15 minutes
 
-## **TASK 1 – Create SAML Resource, Webtop, and SAML IdP
+**TASK 1 – Create SAML Resource, Webtop, and SAML IdP
 Access Policy**
 
 ______________________________________________________________
@@ -142,7 +142,7 @@ Click finished at the bottom of the GUI
 #. In the pop-up dialog box, select the **Authentication** tab and then
    select the **Radio** next to **AD Query**, and click the **Add Item** button
 
-   |image79|
+  
 
 #. In the resulting **AD Query(1)** pop-up window, select
    ``/Commmon/prebuilt-ad-servers`` from the **Server** drop down menu
@@ -150,7 +150,7 @@ Click finished at the bottom of the GUI
 #. In the **SearchFilter** field, enter the following value:
    ``userPrincipalName=%{session.logon.last.username}``
 
-   |image80|
+
 
 #. In the **AD Query(1)** window, click the **Branch Rules** tab
 
@@ -163,11 +163,11 @@ Click finished at the bottom of the GUI
 #. In the resulting pop-up window, delete the existing expression by clicking
    the **X** as shown
 
-   |image82|
+
 
 #. Create a new **Simple** expression by clicking the **Add Expression** button
 
-   |image83|
+
 
 #. In the resulting menu, select the following from the drop down menus:
 
@@ -179,15 +179,15 @@ Click finished at the bottom of the GUI
 
 #. Click the **Add Expression** Button
 
-   |image84|
+ 
 
 #. Click the **Finished** button to complete the expression
 
-   |image85|
+  
 
 #. Click the **Save** button to complete the **AD Query**
 
-   |image86|
+ 
 
 #. In the **Visual Policy Editor** window for ``/Common/pre-built-idp.acme.com policy``,
    click the **Plus (+) Sign** on the **Successful** branch between
@@ -197,24 +197,24 @@ Click finished at the bottom of the GUI
    the **Radio** next to **Advanced Resource Assign**, and click the
    **Add Item** button
 
-   |image87|
+
 
 #. In the resulting **Advanced Resource Assign(1)** pop-up window, click
    the **Add New Entry** button
 
 #. In the new Resource Assignment entry, click the **Add/Delete** link
 
-   |image88|
+ 
 
 #. In the resulting pop-up window, click the **SAML** tab, and select the
    **Checkbox** next to */Common/partner-app*
 
-   |image89|
+  
 
 #. Click the **Webtop** tab, and select the **Checkbox** next to
    ``/Common/full_webtop``
 
-   |image90|
+   
 
 #. Click the **Update** button at the bottom of the window to complete
    the Resource Assignment entry
@@ -225,17 +225,17 @@ Click finished at the bottom of the GUI
 #. In the **Visual Policy Editor**, select the **Deny** ending on the
    fallback branch following **Advanced Resource Assign**
 
-   |image91|
+   
 
 #. In the **Select Ending** dialog box, selet the **Allow** radio button
    and then click **Save**
 
-   |image92|
+   
 
 #. In the **Visual Policy Editor**, click **Apply Access Policy**
    (top left), and close the **Visual Policy Editor**
 
-   |image93|
+
 
 ## TASK 3 - Test the Kerberos to SAML Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
