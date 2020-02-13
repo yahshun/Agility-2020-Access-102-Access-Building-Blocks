@@ -246,7 +246,7 @@ Click finished at the bottom of the GUI
    Explorer has been configured and will be used.
 
 #. Using Internet Explorer from the jump host, navigate to the SAML IdP you
-   previously configured at *pre-built-idp.acme.com* (or click the
+   previously configured at *idp.acme.com* (or click the
    provided bookmark)
 
    
