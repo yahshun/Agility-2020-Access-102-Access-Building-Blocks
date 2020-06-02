@@ -1,7 +1,7 @@
 Welcome
 =======
 
-Welcome to the Identity & Access Management lab series at Agility |2020|.
+Welcome to the Identity & Access Management lab series at Agility 2020.
 
 The following labs and exercises is intended to introduce students to basic
 yet commonly used Access Policy Manager (APM) use cases and concepts including
@@ -12,12 +12,11 @@ provided during the course as well as a reference guide that can be referred
 to after class as a basis for understanding and configuring often used
 APM building blocks.
 
-|repoinfo|
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
    :glob:
 
-   class?/class*
-   class??/class*
+   module*/module*
+
